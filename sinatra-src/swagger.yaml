@@ -168,58 +168,6 @@ definitions:
       _link:
         type: "string"
         example: "/books/105"
-  BookTwo:
-    type: "object"
-    required:
-    - "_link"
-    - "author"
-    - "description"
-    - "id"
-    - "subject"
-    - "title"
-    properties:
-      id:
-        type: "integer"
-        example: 106
-      title:
-        type: "string"
-        example: "A Clash of Kings"
-      description:
-        type: "string"
-        example: "In this eagerly awaited sequel to A Game of Thrones..."
-      author:
-        $ref: "#/definitions/Author"
-      subject:
-        $ref: "#/definitions/Subject"
-      _link:
-        type: "string"
-        example: "/books/106"
-  BookThree:
-    type: "object"
-    required:
-    - "_link"
-    - "author"
-    - "description"
-    - "id"
-    - "subject"
-    - "title"
-    properties:
-      id:
-        type: "integer"
-        example: 107
-      title:
-        type: "string"
-        example: "A Storm of Swords"
-      description:
-        type: "string"
-        example: "Here is the third volume in George R. R. Martin’s magnificent..."
-      author:
-        $ref: "#/definitions/Author"
-      subject:
-        $ref: "#/definitions/Subject"
-      _link:
-        type: "string"
-        example: "/books/107"
   Author:
     type: "object"
     required:
