@@ -1,12 +1,12 @@
 {
   "name": "smartbear-library",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Request data from our smartbear library",
   "main": "index.js",
   "scripts": {
-	"prestart": "npm install",
-	"start": "node index.js"
-  },  
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
   "keywords": [
     "swagger"
   ],
