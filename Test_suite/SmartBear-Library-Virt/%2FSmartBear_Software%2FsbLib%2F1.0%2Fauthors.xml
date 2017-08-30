@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:restMockAction name="/SmartBear_Software/sbLib/1.0/authors" method="GET" resourcePath="/SmartBear_Software/sbLib/1.0/authors" id="c2f7c3e5-dd14-4ea6-8cf6-ce0d52640152" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c2f7c3e5-dd14-4ea6-8cf6-ce0d52640152fileName">%2FSmartBear_Software%2FsbLib%2F1.0%2Fauthors</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="ec972cde-ceaf-4c8a-a6c9-2df2dcd4da00" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+<con:restMockAction name="/SmartBear_Software/sbLib/1.0/authors" method="GET" resourcePath="/SmartBear_Software/sbLib/1.0/authors" id="c2f7c3e5-dd14-4ea6-8cf6-ce0d52640152" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c2f7c3e5-dd14-4ea6-8cf6-ce0d52640152fileName">%2FSmartBear_Software%2FsbLib%2F1.0%2Fauthors</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="ec972cde-ceaf-4c8a-a6c9-2df2dcd4da00" httpResponseStatus="200" mediaType="application/json" dataSource=""><con:settings/><con:responseContent>{
   "status" : 200,
   "results" : [ ]
-}</con:responseContent></con:response><con:response name="Response 2" id="3ab896f5-2ba5-4468-9b69-09e24080bc3d" httpResponseStatus="404" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="Response 2" id="3ab896f5-2ba5-4468-9b69-09e24080bc3d" httpResponseStatus="404" mediaType="application/json" dataSource=""><con:settings/><con:responseContent>{
   "status" : 404,
   "message" : "Resource not found"
 }</con:responseContent></con:response></con:restMockAction>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/authors" path="/authors" id="3c08ca36-be98-4738-b4f1-79380be092fb" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3c08ca36-be98-4738-b4f1-79380be092fbfileName">%2Fauthors</con:setting></con:settings><con:parameters/><con:method name="GET" id="d5a0b667-3286-476c-93f8-68bfe9d707aa" method="GET"><con:description>Returns array based on author search params.
+<con:resource name="/authors" path="/authors" id="3c08ca36-be98-4738-b4f1-79380be092fb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3c08ca36-be98-4738-b4f1-79380be092fbfileName">%2Fauthors</con:setting></con:settings><con:parameters/><con:method name="GET" id="d5a0b667-3286-476c-93f8-68bfe9d707aa" method="GET"><con:description>Returns array based on author search params.
 searches authors</con:description><con:settings/><con:parameters><con:parameter><con:name>first_name</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description>first name search parameter</con:description></con:parameter><con:parameter><con:name>last_name</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description>last name search parameter</con:description></con:parameter></con:parameters><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:sampleContent>{
   "status" : 200,
   "results" : [ ]
 }</con:sampleContent></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>404</con:status><con:params/><con:sampleContent>{
   "status" : 404,
   "message" : "Resource not found"
-}</con:sampleContent></con:representation><con:request name="Request 1" id="ed224382-0d35-4a9e-8da8-893dec58dc69" mediaType="application/json"><con:settings/><con:endpoint>https://virtserver.swaggerhub.com</con:endpoint><con:credentials/><con:parameters>
+}</con:sampleContent></con:representation><con:request name="Request 1" id="ed224382-0d35-4a9e-8da8-893dec58dc69" mediaType="application/json"><con:settings/><con:endpoint>https://virtserver.swaggerhub.com</con:endpoint><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:parameters>
   <con:entry key="last_name" value=""/>
   <con:entry key="first_name" value=""/>
-</con:parameters></con:request></con:method></con:resource>
+</con:parameters><con:environmentSpec><con:entry environmentId="a90e0ea6-a276-4d1c-9363-20cdc705bcbe"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec></con:request></con:method></con:resource>

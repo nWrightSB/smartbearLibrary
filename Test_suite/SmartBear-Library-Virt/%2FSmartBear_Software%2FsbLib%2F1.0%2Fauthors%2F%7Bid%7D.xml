@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:restMockAction name="/SmartBear_Software/sbLib/1.0/authors/{id}" method="GET" resourcePath="/SmartBear_Software/sbLib/1.0/authors/{id}" id="afbb2b7b-20a9-43ab-a148-88228bed925e" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="afbb2b7b-20a9-43ab-a148-88228bed925efileName">%2FSmartBear_Software%2FsbLib%2F1.0%2Fauthors%2F%7Bid%7D</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="f3ae189b-c4bf-48ce-9987-b66022daafdd" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+<con:restMockAction name="/SmartBear_Software/sbLib/1.0/authors/{id}" method="GET" resourcePath="/SmartBear_Software/sbLib/1.0/authors/{id}" id="afbb2b7b-20a9-43ab-a148-88228bed925e" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="afbb2b7b-20a9-43ab-a148-88228bed925efileName">%2FSmartBear_Software%2FsbLib%2F1.0%2Fauthors%2F%7Bid%7D</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="f3ae189b-c4bf-48ce-9987-b66022daafdd" httpResponseStatus="200" mediaType="application/json" dataSource=""><con:settings/><con:responseContent>{
   "status" : 200,
   "result" : {
     "id" : 254,
@@ -7,7 +7,7 @@
     "last_name" : "Martin",
     "_link" : "/authors/254"
   }
-}</con:responseContent></con:response><con:response name="Response 2" id="8e9a2ffb-cb22-4e17-9ed1-0d1e09a957c8" httpResponseStatus="404" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="Response 2" id="8e9a2ffb-cb22-4e17-9ed1-0d1e09a957c8" httpResponseStatus="404" mediaType="application/json" dataSource=""><con:settings/><con:responseContent>{
   "status" : 404,
   "message" : "Resource not found"
 }</con:responseContent></con:response></con:restMockAction>
