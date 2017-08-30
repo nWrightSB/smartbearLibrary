@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/books/{id}" path="/books/{id}" id="081659e7-d587-446c-9e8e-6035dbb9ffad" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="081659e7-d587-446c-9e8e-6035dbb9ffadfileName">%2Fbooks%2F%7Bid%7D</con:setting></con:settings><con:parameters><con:parameter required="true"><con:name>id</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description>book id</con:description></con:parameter></con:parameters><con:method name="GET" id="3209be05-6305-4b1e-a1db-8cb248097c33" method="GET"><con:description>Returns array based of search params.
+returns book object</con:description><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:sampleContent>{
+  "status" : 200,
+  "result" : {
+    "id" : 105,
+    "title" : "A Game of Thrones",
+    "description" : "From a master of contemporary fantasy comes the first novel of a landmark series...",
+    "author" : {
+      "id" : 254,
+      "first_name" : "George R.R.",
+      "last_name" : "Martin",
+      "_link" : "/authors/254"
+    },
+    "_link" : "/books/105"
+  }
+}</con:sampleContent></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>404</con:status><con:params/><con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource not found"
+}</con:sampleContent></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="9ab34cfc-5574-4fd4-b538-bd4cf2db4262" mediaType="application/json"><con:settings/><con:endpoint>https://virtserver.swaggerhub.com</con:endpoint><con:credentials/><con:parameters><entry key="id" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method><con:method name="DELETE" id="84a4cdc5-485a-4cc8-bd11-1956b65b9e88" method="DELETE"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="70d02f1d-1c6a-4570-aad6-860b5eb1ab81" mediaType="application/json"><con:settings/><con:parameters/></con:request></con:method></con:resource>

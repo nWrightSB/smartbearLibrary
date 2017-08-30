@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/books" path="/books" id="e1b1777c-cdde-42e8-b148-407fe5a49ca6" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="e1b1777c-cdde-42e8-b148-407fe5a49ca6fileName">%2Fbooks</con:setting></con:settings><con:parameters/><con:method name="GET" id="676a320c-134a-4b61-b30b-d64fa3296a6f" method="GET"><con:description>Returns array based on book search params.
+searches books</con:description><con:settings/><con:parameters><con:parameter><con:name>title</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description>title search parameter</con:description></con:parameter><con:parameter><con:name>author</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description>author search parameter</con:description></con:parameter></con:parameters><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:sampleContent>{
+  "status" : 200,
+  "results" : [ ]
+}</con:sampleContent></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>404</con:status><con:params/><con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource not found"
+}</con:sampleContent></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="8525481e-7928-4310-80ea-2422dd6d1a61" mediaType="application/json"><con:settings/><con:endpoint>https://virtserver.swaggerhub.com</con:endpoint><con:credentials/><con:parameters>
+  <con:entry key="author" value=""/>
+  <con:entry key="title" value=""/>
+</con:parameters></con:request></con:method></con:resource>

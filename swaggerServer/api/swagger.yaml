@@ -1,25 +1,21 @@
 ---
 swagger: "2.0"
 info:
-  description: "get books, authors, subjects"
+  description: "Request data from our smartbear library"
   version: "1.0"
-  title: "Working Library"
+  title: "SmartBear Library"
 host: "virtserver.swaggerhub.com"
-basePath: "/personalAPIs/WorkingLibrary/1.0"
-tags:
-- name: "admins"
-  description: "Secured Admin-only calls"
-- name: "users"
-  description: "Resources available to regular users"
+basePath: "/SmartBear_Software/sbLib/1.0"
 schemes:
 - "https"
 paths:
   /books:
     get:
       tags:
-      - "users"
+      - "allUsers"
       summary: "searches books"
       description: "Returns array based on book search params."
+      operationId: "booksGET"
       produces:
       - "application/json"
       parameters:
@@ -33,49 +29,23 @@ paths:
         description: "author search parameter"
         required: false
         type: "string"
-      - name: "subject"
-        in: "query"
-        description: "subject search parameter"
-        required: false
-        type: "string"
       responses:
         200:
           description: "book successfully created"
           schema:
-            $ref: "#/definitions/AllBooks"
+            $ref: "#/definitions/Books"
         404:
           description: "server error"
           schema:
             $ref: "#/definitions/inline_response_404"
-    post:
-      tags:
-      - "users"
-      summary: "create new book resource"
-      description: "Creates a new book in the DB, on success returns book json object"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "new book object"
-        description: "book description"
-        required: true
-        schema:
-          $ref: "#/definitions/new book object"
-      responses:
-        201:
-          description: "book successfully created"
-          schema:
-            $ref: "#/definitions/Book"
-        404:
-          description: "server error"
-          schema:
-            $ref: "#/definitions/inline_response_404"
+      x-swagger-router-controller: "AllUsers"
   /books/{id}:
     get:
       tags:
-      - "users"
+      - "allUsers"
       summary: "returns book object"
       description: "Returns array based of search params."
+      operationId: "booksIdGET"
       produces:
       - "application/json"
       parameters:
@@ -89,35 +59,18 @@ paths:
           description: "search results matching criteria"
           schema:
             $ref: "#/definitions/inline_response_200"
-        204:
-          description: "no matching results"
         404:
           description: "server error"
           schema:
             $ref: "#/definitions/inline_response_404"
-    delete:
-      tags:
-      - "users"
-      summary: "remove book resource"
-      description: "Returns deleted object"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        200:
-          description: "resource successfully removed"
-          schema:
-            $ref: "#/definitions/Book"
-        404:
-          description: "server error"
-          schema:
-            $ref: "#/definitions/inline_response_404"
+      x-swagger-router-controller: "AllUsers"
   /authors:
     get:
       tags:
-      - "users"
+      - "allUsers"
       summary: "searches authors"
       description: "Returns array based on author search params."
+      operationId: "authorsGET"
       produces:
       - "application/json"
       parameters:
@@ -133,6 +86,31 @@ paths:
         type: "string"
       responses:
         200:
+          description: "book successfully created"
+          schema:
+            $ref: "#/definitions/Authors"
+        404:
+          description: "server error"
+          schema:
+            $ref: "#/definitions/inline_response_404"
+      x-swagger-router-controller: "AllUsers"
+  /authors/{id}:
+    get:
+      tags:
+      - "allUsers"
+      summary: "returns author object"
+      description: "Query for a specific author by ID."
+      operationId: "authorsIdGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "book id"
+        required: true
+        type: "integer"
+      responses:
+        200:
           description: "search results matching criteria"
           schema:
             $ref: "#/definitions/inline_response_200_1"
@@ -140,7 +118,39 @@ paths:
           description: "server error"
           schema:
             $ref: "#/definitions/inline_response_404"
+      x-swagger-router-controller: "AllUsers"
 definitions:
+  Books:
+    type: "object"
+    required:
+    - "results"
+    - "status"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      results:
+        type: "array"
+        example:
+        - id: "101"
+          title: "A Game of Thrones"
+          author_id: 254
+          _link: "/books/101"
+        - id: "102"
+          title: "A Clash of Kings"
+          author_id: 254
+          _link: "/books/102"
+        - id: "103"
+          title: "A Storm of Swords"
+          author_id: 254
+          _link: "/books/103"
+        - id: "104"
+          title: "A Feast for Crows"
+          author_id: 254
+          _link: "/books/104"
+        items:
+          type: "object"
+          properties: {}
   Book:
     type: "object"
     required:
@@ -148,7 +158,6 @@ definitions:
     - "author"
     - "description"
     - "id"
-    - "subject"
     - "title"
     properties:
       id:
@@ -163,8 +172,6 @@ definitions:
           \ landmark series..."
       author:
         $ref: "#/definitions/Author"
-      subject:
-        $ref: "#/definitions/Subject"
       _link:
         type: "string"
         example: "/books/105"
@@ -188,27 +195,7 @@ definitions:
       _link:
         type: "string"
         example: "/authors/254"
-  Subject:
-    type: "object"
-    required:
-    - "_link"
-    - "description"
-    - "id"
-    - "name"
-    properties:
-      id:
-        type: "integer"
-        example: 396
-      name:
-        type: "string"
-        example: "Science Fiction & Fantasy"
-      description:
-        type: "string"
-        example: "Subject matter that ..."
-      _link:
-        type: "string"
-        example: "/subjects/396"
-  AllBooks:
+  Authors:
     type: "object"
     required:
     - "results"
@@ -219,6 +206,19 @@ definitions:
         example: 200
       results:
         type: "array"
+        example:
+        - id: "254"
+          first_name: "George R.R."
+          last_name: "Martin"
+          _link: "/authors/254"
+        - id: "255"
+          first_name: "Frank"
+          last_name: "Herbert"
+          _link: "/authors/255"
+        - id: "256"
+          first_name: "Andy"
+          last_name: "Weir"
+          _link: "/authors/256"
         items:
           type: "object"
           properties: {}
@@ -232,29 +232,6 @@ definitions:
         type: "string"
         example: "Resource not found"
         description: "status string"
-  new book object:
-    type: "object"
-    required:
-    - "author_first_name"
-    - "author_last_name"
-    - "description"
-    - "title"
-    properties:
-      title:
-        type: "string"
-        example: "A Clash of Kings"
-      description:
-        type: "string"
-        example: "A book about dragons and stuff..."
-      author_first_name:
-        type: "string"
-        example: "George"
-      author_last_name:
-        type: "string"
-        example: "Martin"
-      subject:
-        type: "string"
-        example: "Fiction"
   inline_response_200:
     properties:
       status:
@@ -270,11 +247,4 @@ definitions:
         example: 200
         description: "status code"
       result:
-        type: "array"
-        items:
-          $ref: "#/definitions/Author"
-responses:
-  404Response:
-    description: "server error"
-    schema:
-      $ref: "#/definitions/inline_response_404"
+        $ref: "#/definitions/Author"

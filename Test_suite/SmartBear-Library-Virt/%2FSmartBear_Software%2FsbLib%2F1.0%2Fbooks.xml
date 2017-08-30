@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/SmartBear_Software/sbLib/1.0/books" method="GET" resourcePath="/SmartBear_Software/sbLib/1.0/books" id="bfdf9abc-c6c0-426a-8e1a-9c008fb03c74" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="bfdf9abc-c6c0-426a-8e1a-9c008fb03c74fileName">%2FSmartBear_Software%2FsbLib%2F1.0%2Fbooks</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="cc91c76b-c4cd-4336-abd5-1c76583fefb7" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+  "status" : 200,
+  "results" : [ ]
+}</con:responseContent></con:response><con:response name="Response 2" id="925af45f-64f8-4ceb-b0ba-6669f9474227" httpResponseStatus="404" mediaType="application/json"><con:settings/><con:responseContent>{
+  "status" : 404,
+  "message" : "Resource not found"
+}</con:responseContent></con:response></con:restMockAction>

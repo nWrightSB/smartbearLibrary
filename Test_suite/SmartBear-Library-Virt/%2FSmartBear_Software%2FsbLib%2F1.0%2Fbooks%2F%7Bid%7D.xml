@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/SmartBear_Software/sbLib/1.0/books/{id}" method="GET" resourcePath="/SmartBear_Software/sbLib/1.0/books/{id}" id="f8a16d3b-ba23-4ec2-9aa9-9ee17d499a59" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="f8a16d3b-ba23-4ec2-9aa9-9ee17d499a59fileName">%2FSmartBear_Software%2FsbLib%2F1.0%2Fbooks%2F%7Bid%7D</con:setting></con:settings><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Response 1" id="1b1b4bd3-3581-4183-bee0-da927f3756b1" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+  "status" : 200,
+  "result" : {
+    "id" : 105,
+    "title" : "A Game of Thrones",
+    "description" : "From a master of contemporary fantasy comes the first novel of a landmark series...",
+    "author" : {
+      "id" : 254,
+      "first_name" : "George R.R.",
+      "last_name" : "Martin",
+      "_link" : "/authors/254"
+    },
+    "_link" : "/books/105"
+  }
+}</con:responseContent></con:response><con:response name="Response 2" id="f04171b0-394d-4164-8f66-15e3592411b1" httpResponseStatus="404" mediaType="application/json"><con:settings/><con:responseContent>{
+  "status" : 404,
+  "message" : "Resource not found"
+}</con:responseContent></con:response></con:restMockAction>
